@@ -27,12 +27,8 @@ def eat(name, sushi, photo_t):
     at_x_t = sushi_t + gap
     if at_x_t > photo_t:
         return False
-    while at_x_t <= photo_t:
-
-        if at_x_t + L <= photo_t:
-            at_x_t += L
-        else:
-            break
+    at_x_t += ((photo_t - at_x_t) // L) * L
+    # print(sushi_t, photo_t, guest_x[name], gap)
     return guest_t[name] <= at_x_t
             
 
