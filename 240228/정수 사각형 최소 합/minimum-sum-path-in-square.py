@@ -13,4 +13,5 @@ for i in range(N):
         if i - 1 >= 0:
             candid.append(dp[i - 1][j] + board[i][j])
         dp[i][j] = min(candid)
-print(min(dp[-1]))
+
+print(dp[N - 1][0])
