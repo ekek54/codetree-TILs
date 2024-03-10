@@ -15,7 +15,7 @@ for i in range(n):
         boundary = m
         for k in range(i, n):
             for l in range(j, boundary):
-                if board[k][l] < 0:
+                if board[k][l] <= 0:
                     boundary = l
                     break
                 answer = max(answer, area((i, j), (k, l)))
