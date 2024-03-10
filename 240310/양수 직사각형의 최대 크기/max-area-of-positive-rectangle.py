@@ -16,4 +16,4 @@ for i in range(n):
                 answer = max(answer, area((i, j), (k, l)))
                 if board[k][l] < 0:
                     break
-print(answer)
+print(answer if answer > 0 else -1)
