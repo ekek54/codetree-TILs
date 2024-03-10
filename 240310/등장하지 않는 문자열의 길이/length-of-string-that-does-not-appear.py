@@ -7,11 +7,15 @@ for i in range(N):
     flag = False
     for j in range(N - i):
         word = S[j: j + i + 1]
-        if S.count(word) != 1:
-            flag = True
-            break
+        count = 0
+        for k in range(N - i):
+            cmp_word = S[k: k + i + 1]
+            if word == cmp_word:
+                count += 1
         # print(word)
-        # print(S.count(word))
+        # print(count)
+        if count > 1:
+            flag = True
     if not flag:
         answer = i + 1
         break
