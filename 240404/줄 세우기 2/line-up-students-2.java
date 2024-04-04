@@ -48,7 +48,7 @@ public class Main {
         public int compareTo(Object o) {
             Student s = (Student) o;
             if (height == s.height) {
-                return weight - s.weight;
+                return s.weight - weight;
             }
             return height - s.height;
         }
