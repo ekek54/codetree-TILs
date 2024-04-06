@@ -25,7 +25,7 @@ public class Main {
 
     private static void dfs(int cnt) {
         if (cnt == m) {
-            answer = Math.min(answer, minDs());
+            answer = Math.min(answer, maxDs());
             // System.out.println(stack);
             // System.out.println(answer);
             return;
@@ -39,14 +39,14 @@ public class Main {
         }
     }
 
-    private static int minDs() {
-        int result = Integer.MAX_VALUE;
+    private static int maxDs() {
+        int result = Integer.MIN_VALUE;
         for(int i: stack) {
             for (int j: stack) {
                 if(i == j) continue;
                 Dot a = dots.get(i);
                 Dot b = dots.get(j);
-                result = Math.min(result, a.dsFrom(b));
+                result = Math.max(result, a.dsFrom(b));
             }
         }
         return result;
